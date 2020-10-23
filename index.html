@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- TITULO -->
+    <title>XATI</title>
+
+    <!-- ICON -->
+    <link rel="icon" href="./assets/images/icons/iconxati.png">
+
+    <!-- META TAGS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Matheus Araujo">
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/app.css">
+
+    <!-- JQUERY -->
+    <script src="./assets/js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="login-body">
+            <div class="login-content">
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="InputNome" style="color: rgba(0,0,0,0.7);">Nome de usuário</label>
+                        <input id="nickname" type="text" class="form-control" name="nickname" placeholder="Coloque o seu nome de usuário" autocomplete="off" autofocus>
+                    </div>
+
+                    <button id="btnEnter" class="btn btn-danger" type="submit" style="width: 100%; color: #FFF; font-size: 1rem;">
+                        Entrar
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="images-bg">
+            <img class="notebook-img" src="./assets/images/notebook.svg">
+            <img class="chat-img" src="./assets/images/chat.svg">
+        </div>
+    </div> <!-- CONTENT-->
+</body>
+    <!--SCRIPTS-->
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/chatFirebase.js"></script>
+</body>
+</html>
