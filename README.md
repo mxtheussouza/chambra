@@ -11,7 +11,7 @@ Requirements
 ------------
  - Firebase account
  
- Installation 
+ Installation if you want to use this project for yourself
  ------------
  
  **1 - Create Firebase project**
