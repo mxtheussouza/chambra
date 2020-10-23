@@ -20,9 +20,9 @@ Requirements
  
  **3 - Copy your CDN e paste in project Xati**
  
- **2 - Create Realtime Database in Test Mode**
+ **4 - Create Realtime Database in Test Mode**
  
- **2 - Run project**
+ **5 - Run project**
 
 
 Tecnologies used in this project
