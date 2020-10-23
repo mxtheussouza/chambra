@@ -5,17 +5,16 @@ $(document).ready(function() {
 });
 
 var firebaseConfig = {
-    apiKey: "AIzaSyCJlaVL48MMMIl74yO9qQPqyCTOFBHy1tM",
-    authDomain: "chat-xati.firebaseapp.com",
-    databaseURL: "https://chat-xati.firebaseio.com",
-    projectId: "chat-xati",
-    storageBucket: "chat-xati.appspot.com",
-    messagingSenderId: "809020855746",
-    appId: "1:809020855746:web:85ad9ba159712a28deb25b"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+    apiKey: "AIzaSyAfZHEU9eyyy4drSZouzRHuqy54OOBGNuk",
+    authDomain: "xati-chat.firebaseapp.com",
+    databaseURL: "https://xati-chat.firebaseio.com",
+    projectId: "xati-chat",
+    storageBucket: "xati-chat.appspot.com",
+    messagingSenderId: "341986798031",
+    appId: "1:341986798031:web:d7ad86ce2c3816b4188aba"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
 
@@ -38,7 +37,7 @@ var sendMessages = function(){
             .replace(/(<([^>]+)>)/ig, '')
             .trim();
 
-        if (isHtml(message.val())) {
+        if (isHtml(message)) {
             return false;
         }
 
