@@ -9,7 +9,21 @@ Chat in real time made with just HTML/CSS/JS/Firebase. :coffee:
 
 Requirements
 ------------
- - 
+ - Firebase account
+ 
+ Installation 
+ ------------
+ 
+ **1 - Create Firebase project**
+ 
+ **2 - Create App WEB**
+ 
+ **3 - Copy your CDN e paste in project Xati**
+ 
+ **2 - Create Realtime Database in Test Mode**
+ 
+ **2 - Run project**
+
 
 Tecnologies used in this project
 ------------
