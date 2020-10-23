@@ -7,7 +7,7 @@ Chat in real time made with just HTML/CSS/JS/Firebase. :coffee:
 </p>
 
 
-Requirements
+Requirements if you want to use this project for yourself
 ------------
  - Firebase account
  
