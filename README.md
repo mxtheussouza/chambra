@@ -6,6 +6,9 @@ Chat in real time made with just HTML/CSS/JS/Firebase. :coffee:
   <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
+<hr>
+
+**- Clone this repository and run index.html**
 
 Requirements if you want to use this project for yourself
 ------------
@@ -14,15 +17,15 @@ Requirements if you want to use this project for yourself
  Installation if you want to use this project for yourself
  ------------
  
- **1 - Create Firebase project**
+ **- Create Firebase project**
  
- **2 - Create App WEB**
+ **- Create App WEB**
  
- **3 - Copy your CDN e paste in project Xati**
+ **- Copy your CDN e paste in project Xati**
  
- **4 - Create Realtime Database in Test Mode**
+ **- Create Realtime Database in Test Mode**
  
- **5 - Run project**
+ **- Run project**
 
 
 Tecnologies used in this project
