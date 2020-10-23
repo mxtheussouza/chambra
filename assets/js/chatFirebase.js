@@ -33,6 +33,15 @@ var sendMessages = function(){
         var message = $('#sendMessage').val();
         var name = sessionStorage.getItem('inputValue');
 
+        const isHtml = (str) => !(str || '')
+            .replace(/<([^>]+?)([^>]*?)>(.*?)<\/\1>/ig, '')
+            .replace(/(<([^>]+)>)/ig, '')
+            .trim();
+
+        if (isHtml(message.val())) {
+            return false;
+        }
+
         $('#sendMessage').val('');
 
         firebase.database().ref('mensagens').push().set({
