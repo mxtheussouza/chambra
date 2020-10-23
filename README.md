@@ -6,7 +6,9 @@ Chat in real time made with just HTML/CSS/JS/Firebase. :coffee:
   <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-**Clone this repository and run index.html**
+<hr>
+
+**- Clone this repository and run index.html**
 
 Requirements if you want to use this project for yourself
 ------------
