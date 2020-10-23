@@ -21,7 +21,7 @@ var database = firebase.database();
 
 var getNameHeader = function(){
     var nameHeader = "";
-    nameHeader += "<h2 style='color: #fff;'>" +localStorage.getItem('inputValue')+ "</h2>";
+    nameHeader += "<h2 style='color: #fff;'>" +sessionStorage.getItem('inputValue')+ "</h2>";
 
     $('.header-chat').append(nameHeader);
 };
@@ -31,7 +31,7 @@ var sendMessages = function(){
         e.preventDefault();
 
         var message = $('#sendMessage').val();
-        var name = localStorage.getItem('inputValue');
+        var name = sessionStorage.getItem('inputValue');
 
         $('#sendMessage').val('');
 
@@ -47,7 +47,7 @@ var getMessages = function(){
     var messagesRef = firebase.database().ref('mensagens');
     messagesRef.on('child_added', function(data) {  
     
-        var nameUserCurrent = localStorage.getItem('inputValue');
+        var nameUserCurrent = sessionStorage.getItem('inputValue');
     
         if(data.val().tempo == getTime()) {
             if(data.val().nome == nameUserCurrent){

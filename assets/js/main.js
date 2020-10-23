@@ -4,7 +4,7 @@ $('#btnEnter').click(function(e){
 	if (!$('#nickname').val()) {
 		return false;
 	} else {
-		localStorage.setItem('inputValue', $('#nickname').val());
+		sessionStorage.setItem('inputValue', $('#nickname').val());
 		window.location.href = './pages/chat.html';
 	}
 });
