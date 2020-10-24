@@ -31,7 +31,7 @@ ul, li, a {
 }
 
 .content {
-    background-image: url("../images/backgrounds/background-acesso-log.svg");
+    background-image: url(".../images/backgrounds/background-acesso-log.svg");
     background-size: cover;
     background-position: center;
     height: 100%;
