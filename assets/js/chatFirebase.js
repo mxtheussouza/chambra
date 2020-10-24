@@ -51,7 +51,7 @@ const sendMessages = function(){
 
         firebase.database().ref('mensagens').push().set({
             nome: name,
-            mensagem: message,
+            mensagem: message
             // tempo: getTime()
         });
     });
@@ -76,29 +76,50 @@ const getMessages = function(){
     
         // if(data.val().tempo == getTime()) {
             if(data.val().nome == nameUserCurrent){
+
                 let mensagemRight = "";
-                mensagemRight += "<div class='mensagem-right'>";
-                mensagemRight += "<ul>";
-                mensagemRight += "<li>";
-                mensagemRight += "<span class='mensagem' style='word-wrap: break-word;'>" +data.val().mensagem+ "</span>";
-                mensagemRight += " < "
-                mensagemRight += "<span style='color: #2860b3; background: rgba(0,0,0,0.2); padding: .2rem .4rem; border-radius: 10px;'>" +data.val().nome+ "</span>";
-                mensagemRight += "</li>";
-                mensagemRight += "</ul>";
-                mensagemRight += "</div>";
+                mensagemRight += "<div style='display: flex; justify-content: flex-end; margin-bottom: 1rem;'>"
+                mensagemRight += "<div style='max-width: 95%; position: relative;'>"
+                mensagemRight += "<div style='background: #fff; position: relative; border-radius: .8rem; box-shadow: 0px 2px 3px 0px rgba(13, 21, 75, 0.3);'>"
+                mensagemRight += "<div style='padding: 6px 7px 8px 9px;'>"
+                mensagemRight += "<div style='display: flex; max-width: 100%; line-height: 22px; margin-bottom: .4rem; justify-content: flex-end;'>"
+                mensagemRight += "<span style='margin-left: -2px; padding-left: 2px; word-wrap: break-word; color: #2860b3;'>" +data.val().nome+ "</span>"
+                mensagemRight += "</div>"
+                mensagemRight += "<div>"
+                mensagemRight += "<div style='position: relative; word-wrap: break-word;'>"
+                mensagemRight += "<span>"
+                mensagemRight += "<span>" +data.val().mensagem+ "</span>"
+                mensagemRight += "</span>"
+                mensagemRight += "</div>"
+                mensagemRight += "</div>"
+                mensagemRight += "</div>"
+                mensagemRight += "</div>"
+                mensagemRight += "</div>"
+                mensagemRight += "</div>"
     
                 $('.content-chat').append(mensagemRight);
             } else {
+
                 let mensagemLeft = "";
-                mensagemLeft += "<div class='mensagem-left'>";
-                mensagemLeft += "<ul>";
-                mensagemLeft += "<li>";
-                mensagemLeft += "<span style='color: #dc3545; background: rgba(0,0,0,0.2); padding: .4rem; border-radius: 10px;'>" +data.val().nome+ "</span>";
-                mensagemLeft += " > "
-                mensagemLeft += "<span class='mensagem' style='word-wrap: break-word;'>" +data.val().mensagem+ "</span>";
-                mensagemLeft += "</li>";
-                mensagemLeft += "</ul>";
-                mensagemLeft += "</div>";
+                mensagemLeft += "<div style='display: flex; justify-content: flex-start; margin-bottom: 1rem;'>"
+                mensagemLeft += "<div style='max-width: 95%; position: relative;'>"
+                mensagemLeft += "<div style='background: #fff; position: relative; border-radius: .8rem; box-shadow: 0px 2px 3px 0px rgba(13, 21, 75, 0.3);'>"
+                mensagemLeft += "<div style='padding: 6px 7px 8px 9px;'>"
+                mensagemLeft += "<div style='display: inline-flex; max-width: 100%; line-height: 22px; margin-bottom: .4rem;'>"
+                mensagemLeft += "<span style='margin-left: -2px; padding-left: 2px; word-wrap: break-word; color: #dc3545;'>" +data.val().nome+ "</span>"
+                mensagemLeft += "</div>"
+
+                mensagemLeft += "<div>"
+                mensagemLeft += "<div style='position: relative; word-wrap: break-word;'>"
+                mensagemLeft += "<span>"
+                mensagemLeft += "<span>" +data.val().mensagem+ "</span>"
+                mensagemLeft += "</span>"
+                mensagemLeft += "</div>"
+                mensagemLeft += "</div>"
+                mensagemLeft += "</div>"
+                mensagemLeft += "</div>"
+                mensagemLeft += "</div>"
+                mensagemLeft += "</div>"
     
 
                 $('.content-chat').append(mensagemLeft);
@@ -119,4 +140,15 @@ const getMessages = function(){
 //     let time = hora +':'+ min;
 
 //     return time;
+// };
+
+// var validateTime = function() {
+//     var data = new Date();
+
+//     var hora = data.getHours(); 
+//     var min  = data.getMinutes();
+
+//     if ((hora == 0) && (min == 0)) {
+//         firebase.database().ref('mensagens').remove();
+//     }
 // };

@@ -119,6 +119,7 @@ ul, li, a {
     padding: 1.6rem;
     padding-top: 4rem;
     padding-bottom: 0;
+    background-color: #f5f3f3;
     overflow: hidden;
 }
 
@@ -134,17 +135,13 @@ ul, li, a {
     background: #2860b3;
 }
 
-.mensagem-left {
+/*.mensagem-left {
     width: 100%;
-    display: flex;
-    justify-content: flex-start;
 }
 
 .mensagem-right {
     width: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
+}*/
 
 .footer-chat {
     position: relative;
