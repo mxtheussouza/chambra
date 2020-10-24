@@ -217,6 +217,14 @@ ul, li, a {
     border-radius: 0px;
 }
 
+.content-chat {
+    overflow: auto;
+}
+
+.content-chat::-webkit-scrollbar {
+    width: 0;
+}
+
 .footer-chat {
     border-radius: 0px;
 }
