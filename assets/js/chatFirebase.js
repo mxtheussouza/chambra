@@ -52,7 +52,7 @@ const sendMessages = function(){
         firebase.database().ref('mensagens').push().set({
             nome: name,
             mensagem: message,
-            tempo: getTime()
+            // tempo: getTime()
         });
     });
 };
@@ -60,7 +60,7 @@ const sendMessages = function(){
 const getEmojis = function(){
     $('#btnEmoji').click(function(){
         $('.emojis').toggle();
-        
+
         $('.btn-sm').click(function(){
             var emoji = $(this).text();
             $('#sendMessage').val($('#sendMessage').val() + emoji);
@@ -74,13 +74,13 @@ const getMessages = function(){
     
         let nameUserCurrent = sessionStorage.getItem('inputValue');
     
-        if(data.val().tempo == getTime()) {
+        // if(data.val().tempo == getTime()) {
             if(data.val().nome == nameUserCurrent){
                 let mensagemRight = "";
-                mensagemRight += "<div class='mensagem-right' style='word-wrap: break-word;'>";
+                mensagemRight += "<div class='mensagem-right'>";
                 mensagemRight += "<ul>";
                 mensagemRight += "<li>";
-                mensagemRight += "<span class='mensagem'>" +data.val().mensagem+ "</span>";
+                mensagemRight += "<span class='mensagem' style='word-wrap: break-word;'>" +data.val().mensagem+ "</span>";
                 mensagemRight += " < "
                 mensagemRight += "<span style='color: #2860b3; background: rgba(0,0,0,0.2); padding: .2rem .4rem; border-radius: 10px;'>" +data.val().nome+ "</span>";
                 mensagemRight += "</li>";
@@ -90,12 +90,12 @@ const getMessages = function(){
                 $('.content-chat').append(mensagemRight);
             } else {
                 let mensagemLeft = "";
-                mensagemLeft += "<div class='mensagem-left' style='word-wrap: break-word;'>";
+                mensagemLeft += "<div class='mensagem-left'>";
                 mensagemLeft += "<ul>";
                 mensagemLeft += "<li>";
                 mensagemLeft += "<span style='color: #dc3545; background: rgba(0,0,0,0.2); padding: .4rem; border-radius: 10px;'>" +data.val().nome+ "</span>";
                 mensagemLeft += " > "
-                mensagemLeft += "<span class='mensagem'>" +data.val().mensagem+ "</span>";
+                mensagemLeft += "<span class='mensagem' style='word-wrap: break-word;'>" +data.val().mensagem+ "</span>";
                 mensagemLeft += "</li>";
                 mensagemLeft += "</ul>";
                 mensagemLeft += "</div>";
@@ -104,22 +104,22 @@ const getMessages = function(){
                 $('.content-chat').append(mensagemLeft);
             }
     
-        }
+        // }
        
         let chatScroll = document.getElementById('contentChat');
         chatScroll.scrollTo(0,chatScroll.scrollHeight);
     });
 };
 
-const getTime = function(){
-    let data = new Date();
-    let hora = data.getHours(); 
-    let min  = data.getMinutes();
+// const getTime = function(){
+//     let data = new Date();
+//     let hora = data.getHours(); 
+//     let min  = data.getMinutes();
 
-    let time = hora +':'+ min;
+//     let time = hora +':'+ min;
 
-    return time;
-};
+//     return time;
+// };
 
 // var validateTime = function() {
 //     var data = new Date();
