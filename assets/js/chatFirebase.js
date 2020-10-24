@@ -120,14 +120,3 @@ const getMessages = function(){
 
 //     return time;
 // };
-
-// var validateTime = function() {
-//     var data = new Date();
-
-//     var hora = data.getHours(); 
-//     var min  = data.getMinutes();
-
-//     if ((hora == 0) && (min == 0)) {
-//         firebase.database().ref('mensagens').remove();
-//     }
-// };
