@@ -135,14 +135,6 @@ ul, li, a {
     background: #2860b3;
 }
 
-/*.mensagem-left {
-    width: 100%;
-}
-
-.mensagem-right {
-    width: 100%;
-}*/
-
 .footer-chat {
     position: relative;
     background: #194280;
@@ -175,6 +167,7 @@ ul, li, a {
     box-shadow: 0px 3px 20px 0px rgba(13, 21, 75, 0.3);
     border-radius: 10px;
     display: none;
+    z-index: 10;
 }
 
 .btn-sm {
