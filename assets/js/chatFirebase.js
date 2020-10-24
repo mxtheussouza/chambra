@@ -2,9 +2,12 @@ $(document).ready(function() {
     getNameHeader();
     sendMessages();
     getMessages();
+    getEmojis();
 });
 
-var firebaseConfig = {
+
+(() => {
+  const firebaseConfig = {
     apiKey: "AIzaSyAfZHEU9eyyy4drSZouzRHuqy54OOBGNuk",
     authDomain: "xati-chat.firebaseapp.com",
     databaseURL: "https://xati-chat.firebaseio.com",
@@ -12,25 +15,28 @@ var firebaseConfig = {
     storageBucket: "xati-chat.appspot.com",
     messagingSenderId: "341986798031",
     appId: "1:341986798031:web:d7ad86ce2c3816b4188aba"
-  };
+};
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
 
-var database = firebase.database();
+    const database = firebase.database();
+})();
 
-var getNameHeader = function(){
-    var nameHeader = "";
+
+
+const getNameHeader = function(){
+    let nameHeader = "";
     nameHeader += "<h2 style='color: #fff;'>" +sessionStorage.getItem('inputValue')+ "</h2>";
 
     $('.header-chat').append(nameHeader);
 };
 
-var sendMessages = function(){
+const sendMessages = function(){
     $('#formMessage').submit(function(e){
         e.preventDefault();
 
-        var message = $('#sendMessage').val();
-        var name = sessionStorage.getItem('inputValue');
+        let message = $('#sendMessage').val();
+        let name = sessionStorage.getItem('inputValue');
 
         const isHtml = (str) => !(str || '')
             .replace(/<([^>]+?)([^>]*?)>(.*?)<\/\1>/ig, '')
@@ -51,15 +57,26 @@ var sendMessages = function(){
     });
 };
 
-var getMessages = function(){
-    var messagesRef = firebase.database().ref('mensagens');
+const getEmojis = function(){
+    $('#btnEmoji').click(function(){
+        $('.emojis').toggle();
+        
+        $('.btn-sm').click(function(){
+            var emoji = $(this).text();
+            $('#sendMessage').val($('#sendMessage').val() + emoji);
+        });
+    });
+};
+
+const getMessages = function(){
+    const messagesRef = firebase.database().ref('mensagens');
     messagesRef.on('child_added', function(data) {  
     
-        var nameUserCurrent = sessionStorage.getItem('inputValue');
+        let nameUserCurrent = sessionStorage.getItem('inputValue');
     
         if(data.val().tempo == getTime()) {
             if(data.val().nome == nameUserCurrent){
-                var mensagemRight = "";
+                let mensagemRight = "";
                 mensagemRight += "<div class='mensagem-right' style='word-wrap: break-word;'>";
                 mensagemRight += "<ul>";
                 mensagemRight += "<li>";
@@ -72,7 +89,7 @@ var getMessages = function(){
     
                 $('.content-chat').append(mensagemRight);
             } else {
-                var mensagemLeft = "";
+                let mensagemLeft = "";
                 mensagemLeft += "<div class='mensagem-left' style='word-wrap: break-word;'>";
                 mensagemLeft += "<ul>";
                 mensagemLeft += "<li>";
@@ -83,6 +100,7 @@ var getMessages = function(){
                 mensagemLeft += "</ul>";
                 mensagemLeft += "</div>";
     
+
                 $('.content-chat').append(mensagemLeft);
             }
     
@@ -93,12 +111,12 @@ var getMessages = function(){
     });
 };
 
-var getTime = function(){
-    var data = new Date();
-    var hora = data.getHours(); 
-    var min  = data.getMinutes();
+const getTime = function(){
+    let data = new Date();
+    let hora = data.getHours(); 
+    let min  = data.getMinutes();
 
-    var time = hora +':'+ min;
+    let time = hora +':'+ min;
 
     return time;
 };

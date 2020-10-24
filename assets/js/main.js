@@ -8,3 +8,5 @@ $('#btnEnter').click(function(e){
 		window.location.href = './pages/chat.html';
 	}
 });
+
+
