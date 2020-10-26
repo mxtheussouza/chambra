@@ -58,24 +58,24 @@ const sendMessages = function(){
     });
 };
 
-const getEmojis = function(){
-    const btn = document.getElementById('btnEmoji');
-    const input = document.getElementById('sendMessage');
+// const getEmojis = function(){
+//     const btn = document.getElementById('btnEmoji');
+//     const input = document.getElementById('sendMessage');
 
-    const picker = new EmojiButton({
-        position: 'top',
-        autoHide: false,
-        showVariants: false
-    });
+//     const picker = new EmojiButton({
+//         position: 'top',
+//         autoHide: false,
+//         showVariants: false
+//     });
 
-    picker.on('emoji', function(emoji){
-        input.value += emoji;
-    });
+//     picker.on('emoji', function(emoji){
+//         input.value += emoji;
+//     });
 
-    btn.addEventListener('click', function(){
-        picker.pickerVisible ? picker.hidePicker() : picker.showPicker(btn);
-    });
-};
+//     btn.addEventListener('click', function(){
+//         picker.pickerVisible ? picker.hidePicker() : picker.showPicker(btn);
+//     });
+// };
 
 const getMessages = function(){
     const messagesRef = firebase.database().ref('mensagens');
@@ -148,6 +148,11 @@ const getMessages = function(){
             }
     
         // }
+
+
+        // let n = (Math.random() * 0xfffff * 1000000).toString(16);
+            // let cor = n.slice(0, 6);
+            // let namecolor = '#' + cor;
        
         let chatScroll = document.getElementById('contentChat');
         chatScroll.scrollTo(0,chatScroll.scrollHeight);
@@ -174,20 +179,20 @@ const getTime = function(){
 
 
 // MY CODE
-// const getEmojis = function(){
-//     $('#btnEmoji').click(function(){
-//         $('.emojis').toggle();
+const getEmojis = function(){
+    $('#btnEmoji').click(function(){
+        $('.emojis').toggle();
 
-//         $('.btn-sm').click(function(){
-//             var emoji = $(this).text();
-//             $('#sendMessage').val($('#sendMessage').val() + emoji);
-//         });
-//     });
+        $('.btn-sm').click(function(){
+            var emoji = $(this).text();
+            $('#sendMessage').val($('#sendMessage').val() + emoji);
+        });
+    });
 
-//     const emojis = ['&#x1F600', '&#x1F607'];
+    const emojis = ['&#x1F600', '&#x1F607'];
 
-//     btnEmoji = " ";
-//     btnEmoji += "<button type='button' class='btn btn-sm'>" + emojis[0] + "</button>"
+    btnEmoji = " ";
+    btnEmoji += "<button type='button' class='btn btn-sm'>" + emojis[0] + "</button>"
 
-//     $('.emojis').append(btnEmoji);
-// };
+    $('.emojis').append(btnEmoji);
+};
