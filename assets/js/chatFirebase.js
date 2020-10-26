@@ -167,8 +167,9 @@ const getTime = function(){
 
     if (hora < 10) {
         hora = '0' + hora;
-    }   
-    else if (min < 10) {
+    }
+
+    if (min < 10) {
         min = '0' + min;
     }
 
