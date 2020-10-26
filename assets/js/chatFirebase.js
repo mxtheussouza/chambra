@@ -39,7 +39,6 @@ const sendMessages = function(){
 
         let name = sessionStorage.getItem('inputValue');
         let color = sessionStorage.getItem('nameColor');
-
         let message = $('#sendMessage').val();
 
         const isHtml = (str) => !(str || '')
@@ -76,9 +75,9 @@ const getMessages = function(){
                 mensagemRight += "<div style='max-width: 95%; position: relative;'>"
                 mensagemRight += "<div style='background: #fff; position: relative; border-radius: .8rem; box-shadow: 0px 2px 3px 0px rgba(13, 21, 75, 0.3);'>"
                 mensagemRight += "<div style='padding: 6px 7px 4px 9px;'>"
-                mensagemRight += "<div style='display: flex; max-width: 100%; line-height: 22px; margin-bottom: .4rem; justify-content: flex-end;'>"
-                mensagemRight += "<span style='margin-left: -2px; padding-left: 2px; word-wrap: break-word; color: #2860b3;'>" +data.val().nome+ "</span>"
-                mensagemRight += "</div>"
+                // mensagemRight += "<div style='display: flex; max-width: 100%; line-height: 22px; margin-bottom: .4rem; justify-content: flex-end;'>"
+                // mensagemRight += "<span style='margin-left: -2px; padding-left: 2px; word-wrap: break-word; color: #2860b3;'>" +data.val().nome+ "</span>"
+                // mensagemRight += "</div>"
 
                 mensagemRight += "<div>"
                 mensagemRight += "<div style='position: relative; word-wrap: break-word;'>"
@@ -132,8 +131,6 @@ const getMessages = function(){
                 $('.content-chat').append(mensagemLeft);
             }
         // }
-
-        getColors();
 
         let chatScroll = document.getElementById('contentChat');
         chatScroll.scrollTo(0,chatScroll.scrollHeight);
