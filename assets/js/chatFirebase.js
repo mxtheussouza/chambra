@@ -59,13 +59,21 @@ const sendMessages = function(){
 };
 
 const getEmojis = function(){
-    $('#btnEmoji').click(function(){
-        $('.emojis').toggle();
+    const btn = document.getElementById('btnEmoji');
+    const input = document.getElementById('sendMessage');
 
-        $('.btn-sm').click(function(){
-            var emoji = $(this).text();
-            $('#sendMessage').val($('#sendMessage').val() + emoji);
-        });
+    const picker = new EmojiButton({
+        position: 'top',
+        autoHide: false,
+        showVariants: false
+    });
+
+    picker.on('emoji', function(emoji){
+        input.value += emoji;
+    });
+
+    btn.addEventListener('click', function(){
+        picker.pickerVisible ? picker.hidePicker() : picker.showPicker(btn);
     });
 };
 
@@ -75,14 +83,14 @@ const getMessages = function(){
     
         let nameUserCurrent = sessionStorage.getItem('inputValue');
     
-        // if(data.val().tempo == getTime()) {
-            if(data.val().nome == nameUserCurrent){
+        // if (data.val().tempo == getTime()) {
+            if (data.val().nome == nameUserCurrent) {
 
                 let mensagemRight = "";
                 mensagemRight += "<div style='display: flex; justify-content: flex-end; margin-bottom: 1rem;'>"
                 mensagemRight += "<div style='max-width: 95%; position: relative;'>"
                 mensagemRight += "<div style='background: #fff; position: relative; border-radius: .8rem; box-shadow: 0px 2px 3px 0px rgba(13, 21, 75, 0.3);'>"
-                mensagemRight += "<div style='padding: 6px 7px 8px 9px;'>"
+                mensagemRight += "<div style='padding: 6px 7px 4px 9px;'>"
                 mensagemRight += "<div style='display: flex; max-width: 100%; line-height: 22px; margin-bottom: .4rem; justify-content: flex-end;'>"
                 mensagemRight += "<span style='margin-left: -2px; padding-left: 2px; word-wrap: break-word; color: #2860b3;'>" +data.val().nome+ "</span>"
                 mensagemRight += "</div>"
@@ -112,7 +120,7 @@ const getMessages = function(){
                 mensagemLeft += "<div style='display: flex; justify-content: flex-start; margin-bottom: 1rem;'>"
                 mensagemLeft += "<div style='max-width: 95%; position: relative;'>"
                 mensagemLeft += "<div style='background: #fff; position: relative; border-radius: .8rem; box-shadow: 0px 2px 3px 0px rgba(13, 21, 75, 0.3);'>"
-                mensagemLeft += "<div style='padding: 6px 7px 8px 9px;'>"
+                mensagemLeft += "<div style='padding: 6px 7px 4px 9px;'>"
                 mensagemLeft += "<div style='display: inline-flex; max-width: 100%; line-height: 22px; margin-bottom: .4rem;'>"
                 mensagemLeft += "<span style='margin-left: -2px; padding-left: 2px; word-wrap: break-word; color: #dc3545;'>" +data.val().nome+ "</span>"
                 mensagemLeft += "</div>"
@@ -154,17 +162,32 @@ const getTime = function(){
 
     let time = hora +':'+ min;
 
+    if (hora < 10) {
+        hora = '0' + hora;
+
+    } else if (min < 10) {
+        min = '0' + min;
+    }
+
     return time;
 };
 
 
-// var validateTime = function() {
-//     var data = new Date();
+// MY CODE
+// const getEmojis = function(){
+//     $('#btnEmoji').click(function(){
+//         $('.emojis').toggle();
 
-//     var hora = data.getHours(); 
-//     var min  = data.getMinutes();
+//         $('.btn-sm').click(function(){
+//             var emoji = $(this).text();
+//             $('#sendMessage').val($('#sendMessage').val() + emoji);
+//         });
+//     });
 
-//     if ((hora == 0) && (min == 0)) {
-//         firebase.database().ref('mensagens').remove();
-//     }
+//     const emojis = ['&#x1F600', '&#x1F607'];
+
+//     btnEmoji = " ";
+//     btnEmoji += "<button type='button' class='btn btn-sm'>" + emojis[0] + "</button>"
+
+//     $('.emojis').append(btnEmoji);
 // };

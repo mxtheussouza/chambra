@@ -32,68 +32,7 @@
             </div>
 
             <div class="content-chat" id="contentChat">
-                <div class="row emojis">
-            <!--
-                Fonte: https://apps.timwhitlock.info/emoji/tables/unicode
-                IMPORTANTE! Copie os emojis da coluna NATIVE        
-            -->
-            <button type="button" class="btn btn-sm">😁</button>
-            <button type="button" class="btn btn-sm">😂</button>
-            <button type="button" class="btn btn-sm">😃</button>
-            <button type="button" class="btn btn-sm">😄</button>
-            <button type="button" class="btn btn-sm">😅</button>
-            <button type="button" class="btn btn-sm">😆</button>
-            <button type="button" class="btn btn-sm">😉</button>
-            <button type="button" class="btn btn-sm">😊</button>
-            <button type="button" class="btn btn-sm">😋</button>
-            <button type="button" class="btn btn-sm">😌</button>
-            <button type="button" class="btn btn-sm">😍</button>
-            <button type="button" class="btn btn-sm">😏</button>
-            <button type="button" class="btn btn-sm">😒</button>
-            <button type="button" class="btn btn-sm">😓</button>
-            <button type="button" class="btn btn-sm">😔</button>
-            <button type="button" class="btn btn-sm">😖</button>
-            <button type="button" class="btn btn-sm">😘</button>
-            <button type="button" class="btn btn-sm">😚</button>
-            <button type="button" class="btn btn-sm">😜</button>
-            <button type="button" class="btn btn-sm">😝</button>
-            <button type="button" class="btn btn-sm">😞</button>
-            <button type="button" class="btn btn-sm">😠</button>
-            <button type="button" class="btn btn-sm">😢</button>
-            <button type="button" class="btn btn-sm">😤</button>
-            <button type="button" class="btn btn-sm">😥</button>
-            <button type="button" class="btn btn-sm">😨</button>
-            <button type="button" class="btn btn-sm">😩</button>
-            <button type="button" class="btn btn-sm">😪</button>
-            <button type="button" class="btn btn-sm">😫</button>
-            <button type="button" class="btn btn-sm">😭</button>
-            <button type="button" class="btn btn-sm">😰</button>
-            <button type="button" class="btn btn-sm">😱</button>
-            <button type="button" class="btn btn-sm">😲</button>
-            <button type="button" class="btn btn-sm">😳</button>
-            <button type="button" class="btn btn-sm">😵</button>
-            <button type="button" class="btn btn-sm">😷</button>
-            <button type="button" class="btn btn-sm">😸</button>
-            <button type="button" class="btn btn-sm">😹</button>
-            <button type="button" class="btn btn-sm">😺</button>
-            <button type="button" class="btn btn-sm">😻</button>
-            <button type="button" class="btn btn-sm">😼</button>
-            <button type="button" class="btn btn-sm">😽</button>
-            <button type="button" class="btn btn-sm">😾</button>
-            <button type="button" class="btn btn-sm">😿</button>
-            <button type="button" class="btn btn-sm">🙀</button>
-            <button type="button" class="btn btn-sm">🙅</button>
-            <button type="button" class="btn btn-sm">🙆</button>
-            <button type="button" class="btn btn-sm">🙇</button>
-            <button type="button" class="btn btn-sm">🙈</button>
-            <button type="button" class="btn btn-sm">🙉</button>
-            <button type="button" class="btn btn-sm">🙊</button>
-            <button type="button" class="btn btn-sm">🙋</button>
-            <button type="button" class="btn btn-sm">🙌</button>
-            <button type="button" class="btn btn-sm">🙍</button>
-            <button type="button" class="btn btn-sm">🙎</button>
-            <button type="button" class="btn btn-sm">🙏</button>
-        </div>
+                <!-- <div class="row emojis"></div> -->
             </div>
 
             <div class="footer-chat">
@@ -101,7 +40,9 @@
                     <div class="input-group-append">
                         <span id="btnEmoji" style="display: flex; align-items: center; font-size: 1.8rem; padding: .4rem; height: 5vh; color:#fff; cursor: pointer;"> <i class="fas fa-smile"></i> </span>
                     </div>
+
                     <input id="sendMessage" type="text" class="form-control" autocomplete="off" placeholder="Digite sua mensagem aqui." style="width: 80%; height: 5vh;" autofocus>
+
                     <div class="input-group-append">
                         <button class="btn btn" type="submit" style="display: flex; align-items: center; height: 5vh; color:#fff; font-size: 1.8rem;"> <i class="fas fa-paper-plane"></i> </button>
                     </div>
@@ -121,5 +62,7 @@
 
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/chatFirebase.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/emoji-button@latest/dist/index.min.js"></script>  
 </body>
 </html>
