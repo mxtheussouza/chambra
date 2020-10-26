@@ -2,6 +2,7 @@ $(document).ready(function() {
     getNameHeader();
     sendMessages();
     getMessages();
+    getTime();
     getEmojis();
 });
 
@@ -51,8 +52,8 @@ const sendMessages = function(){
 
         firebase.database().ref('mensagens').push().set({
             nome: name,
-            mensagem: message
-            // tempo: getTime()
+            mensagem: message,
+            tempo: getTime()
         });
     });
 };
@@ -85,12 +86,19 @@ const getMessages = function(){
                 mensagemRight += "<div style='display: flex; max-width: 100%; line-height: 22px; margin-bottom: .4rem; justify-content: flex-end;'>"
                 mensagemRight += "<span style='margin-left: -2px; padding-left: 2px; word-wrap: break-word; color: #2860b3;'>" +data.val().nome+ "</span>"
                 mensagemRight += "</div>"
+
                 mensagemRight += "<div>"
                 mensagemRight += "<div style='position: relative; word-wrap: break-word;'>"
                 mensagemRight += "<span>"
                 mensagemRight += "<span>" +data.val().mensagem+ "</span>"
                 mensagemRight += "</span>"
                 mensagemRight += "</div>"
+                mensagemRight += "</div>"
+
+                mensagemRight += "<div style='display: block; text-align: right;'>"
+                mensagemRight += "<span>"
+                mensagemRight += "<span style='font-size: .7rem; color: rgba(0,0,0,0.5);'>" +data.val().tempo+ "</span>"
+                mensagemRight += "</span>"
                 mensagemRight += "</div>"
                 mensagemRight += "</div>"
                 mensagemRight += "</div>"
@@ -116,6 +124,12 @@ const getMessages = function(){
                 mensagemLeft += "</span>"
                 mensagemLeft += "</div>"
                 mensagemLeft += "</div>"
+
+                mensagemLeft += "<div style='display: block; text-align: right;'>"
+                mensagemLeft += "<span>"
+                mensagemLeft += "<span style='font-size: .7rem; color: rgba(0,0,0,0.5);'>" +data.val().tempo+ "</span>"
+                mensagemLeft += "</span>"
+                mensagemLeft += "</div>"
                 mensagemLeft += "</div>"
                 mensagemLeft += "</div>"
                 mensagemLeft += "</div>"
@@ -132,15 +146,17 @@ const getMessages = function(){
     });
 };
 
-// const getTime = function(){
-//     let data = new Date();
-//     let hora = data.getHours(); 
-//     let min  = data.getMinutes();
 
-//     let time = hora +':'+ min;
+const getTime = function(){
+    let data = new Date();
+    let hora = data.getHours(); 
+    let min  = data.getMinutes();
 
-//     return time;
-// };
+    let time = hora +':'+ min;
+
+    return time;
+};
+
 
 // var validateTime = function() {
 //     var data = new Date();
