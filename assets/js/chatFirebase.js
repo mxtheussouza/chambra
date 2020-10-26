@@ -160,14 +160,14 @@ const getTime = function(){
     let hora = data.getHours(); 
     let min  = data.getMinutes();
 
-    let time = hora +':'+ min;
-
     if (hora < 10) {
         hora = '0' + hora;
-
-    } else if (min < 10) {
+    }   
+    else if (min < 10) {
         min = '0' + min;
     }
+
+    let time = hora +':'+ min;
 
     return time;
 };
