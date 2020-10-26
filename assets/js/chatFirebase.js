@@ -2,6 +2,7 @@ $(document).ready(function() {
     getNameHeader();
     sendMessages();
     getMessages();
+    getColors();
     getTime();
     getEmojis();
 });
@@ -30,14 +31,16 @@ const getNameHeader = function(){
     nameHeader += "<h2 style='color: #fff;'>" +sessionStorage.getItem('inputValue')+ "</h2>";
 
     $('.header-chat').append(nameHeader);
-};
+};   
 
 const sendMessages = function(){
     $('#formMessage').submit(function(e){
         e.preventDefault();
 
-        let message = $('#sendMessage').val();
         let name = sessionStorage.getItem('inputValue');
+        let color = sessionStorage.getItem('nameColor');
+
+        let message = $('#sendMessage').val();
 
         const isHtml = (str) => !(str || '')
             .replace(/<([^>]+?)([^>]*?)>(.*?)<\/\1>/ig, '')
@@ -52,30 +55,12 @@ const sendMessages = function(){
 
         firebase.database().ref('mensagens').push().set({
             nome: name,
+            cor: color,
             mensagem: message,
             tempo: getTime()
         });
     });
 };
-
-// const getEmojis = function(){
-//     const btn = document.getElementById('btnEmoji');
-//     const input = document.getElementById('sendMessage');
-
-//     const picker = new EmojiButton({
-//         position: 'top',
-//         autoHide: false,
-//         showVariants: false
-//     });
-
-//     picker.on('emoji', function(emoji){
-//         input.value += emoji;
-//     });
-
-//     btn.addEventListener('click', function(){
-//         picker.pickerVisible ? picker.hidePicker() : picker.showPicker(btn);
-//     });
-// };
 
 const getMessages = function(){
     const messagesRef = firebase.database().ref('mensagens');
@@ -122,7 +107,7 @@ const getMessages = function(){
                 mensagemLeft += "<div style='background: #fff; position: relative; border-radius: .8rem; box-shadow: 0px 2px 3px 0px rgba(13, 21, 75, 0.3);'>"
                 mensagemLeft += "<div style='padding: 6px 7px 4px 9px;'>"
                 mensagemLeft += "<div style='display: inline-flex; max-width: 100%; line-height: 22px; margin-bottom: .4rem;'>"
-                mensagemLeft += "<span style='margin-left: -2px; padding-left: 2px; word-wrap: break-word; color: #dc3545;'>" +data.val().nome+ "</span>"
+                mensagemLeft += "<span style='margin-left: -2px; padding-left: 2px; word-wrap: break-word; color:" +data.val().cor+ " '>" +data.val().nome+ "</span>"
                 mensagemLeft += "</div>"
 
                 mensagemLeft += "<div>"
@@ -146,19 +131,14 @@ const getMessages = function(){
 
                 $('.content-chat').append(mensagemLeft);
             }
-    
         // }
 
+        getColors();
 
-        // let n = (Math.random() * 0xfffff * 1000000).toString(16);
-            // let cor = n.slice(0, 6);
-            // let namecolor = '#' + cor;
-       
         let chatScroll = document.getElementById('contentChat');
         chatScroll.scrollTo(0,chatScroll.scrollHeight);
     });
 };
-
 
 const getTime = function(){
     let data = new Date();
@@ -178,7 +158,6 @@ const getTime = function(){
     return time;
 };
 
-
 // MY CODE
 const getEmojis = function(){
     $('#btnEmoji').click(function(){
@@ -197,3 +176,22 @@ const getEmojis = function(){
 
     $('.emojis').append(btnEmoji);
 };
+
+// const getEmojis = function(){
+//     const btn = document.getElementById('btnEmoji');
+//     const input = document.getElementById('sendMessage');
+
+//     const picker = new EmojiButton({
+//         position: 'top',
+//         autoHide: false,
+//         showVariants: false
+//     });
+
+//     picker.on('emoji', function(emoji){
+//         input.value += emoji;
+//     });
+
+//     btn.addEventListener('click', function(){
+//         picker.pickerVisible ? picker.hidePicker() : picker.showPicker(btn);
+//     });
+// };
