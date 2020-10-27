@@ -159,40 +159,40 @@ const getTime = function(){
 };
 
 // MY CODE
-const getEmojis = function(){
-    $('#btnEmoji').click(function(){
-        $('.emojis').toggle();
+// const getEmojis = function(){
+//     $('#btnEmoji').click(function(){
+//         $('.emojis').toggle();
 
-        $('.btn-sm').click(function(){
-            var emoji = $(this).text();
-            $('#sendMessage').val($('#sendMessage').val() + emoji);
-        });
+//         $('.btn-sm').click(function(){
+//             var emoji = $(this).text();
+//             $('#sendMessage').val($('#sendMessage').val() + emoji);
+//         });
+//     });
+
+//     const emojis = ['&#x1F600', '&#x1F607'];
+
+//     btnEmoji = " ";
+//     btnEmoji += "<button type='button' class='btn btn-sm'>" + emojis[0] + "</button>"
+
+//     $('.emojis').append(btnEmoji);
+// };
+
+
+const getEmojis = function(){
+    const btn = document.getElementById('btnEmoji');
+    const input = document.getElementById('sendMessage');
+
+    const picker = new EmojiButton({
+        position: 'top',
+        autoHide: false,
+        showVariants: false
     });
 
-    const emojis = ['&#x1F600', '&#x1F607'];
+    picker.on('emoji', function(emoji){
+        input.value += emoji;
+    });
 
-    btnEmoji = " ";
-    btnEmoji += "<button type='button' class='btn btn-sm'>" + emojis[0] + "</button>"
-
-    $('.emojis').append(btnEmoji);
+    btn.addEventListener('click', function(){
+        picker.pickerVisible ? picker.hidePicker() : picker.showPicker(btn);
+    });
 };
-
-
-// const getEmojis = function(){
-//     const btn = document.getElementById('btnEmoji');
-//     const input = document.getElementById('sendMessage');
-
-//     const picker = new EmojiButton({
-//         position: 'top',
-//         autoHide: false,
-//         showVariants: false
-//     });
-
-//     picker.on('emoji', function(emoji){
-//         input.value += emoji;
-//     });
-
-//     btn.addEventListener('click', function(){
-//         picker.pickerVisible ? picker.hidePicker() : picker.showPicker(btn);
-//     });
-// };
