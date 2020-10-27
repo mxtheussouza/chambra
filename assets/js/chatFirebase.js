@@ -42,21 +42,23 @@ const sendMessages = function(){
         let color = sessionStorage.getItem('nameColor');
         let message = $('#sendMessage').val();
 
-        const isHtml = (str) => !(str || '')
-            .replace(/<([^>]+?)([^>]*?)>(.*?)<\/\1>/ig, '')
-            .replace(/(<([^>]+)>)/ig, '')
-            .trim();
+        // const isHtml = (str) => !(str || '')
+        //     .replace(/<([^>]+?)([^>]*?)>(.*?)<\/\1>/ig, '')
+        //     .replace(/(<([^>]+)>)/ig, '')
+        //     .trim();
 
-        if (isHtml(message)) {
-            return false;
-        }
+        // if (isHtml(message)) {
+        //     return false;
+        // }
+
+        let messageFormated = message.replace(/&/g, "&amp;") .replace(/</g, "&lt;") .replace(/>/g, "&gt;") .replace(/"/g, "&quot;") .replace(/'/g, "&#039;");
 
         $('#sendMessage').val('');
 
         firebase.database().ref('mensagens').push().set({
             nome: name,
             cor: color,
-            mensagem: message,
+            mensagem: messageFormated,
             tempo: getTime()
         });
     });
