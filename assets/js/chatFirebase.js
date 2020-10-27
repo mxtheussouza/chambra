@@ -9,16 +9,17 @@ $(document).ready(function() {
 
 
 (() => {
-  const firebaseConfig = {
-    apiKey: "AIzaSyAfZHEU9eyyy4drSZouzRHuqy54OOBGNuk",
-    authDomain: "xati-chat.firebaseapp.com",
-    databaseURL: "https://xati-chat.firebaseio.com",
-    projectId: "xati-chat",
-    storageBucket: "xati-chat.appspot.com",
-    messagingSenderId: "341986798031",
-    appId: "1:341986798031:web:d7ad86ce2c3816b4188aba"
-};
-  // Initialize Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyA5Z029X1_OS3-xOJ0qqoL3rLU109H1IS0",
+        authDomain: "chambra-chat.firebaseapp.com",
+        databaseURL: "https://chambra-chat.firebaseio.com",
+        projectId: "chambra-chat",
+        storageBucket: "chambra-chat.appspot.com",
+        messagingSenderId: "894331302194",
+        appId: "1:894331302194:web:24069cdc304fccab49a72b"
+    };
+
+    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
     const database = firebase.database();
