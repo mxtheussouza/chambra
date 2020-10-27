@@ -21,7 +21,7 @@ Requirements if you want to use this project for yourself
  
  **- Create App WEB**
  
- **- Copy your CDN e paste in project Xati**
+ **- Copy your CDN e paste in project Chambra**
  
  **- Create Realtime Database in Test Mode**
  
