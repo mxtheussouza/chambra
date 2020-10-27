@@ -174,6 +174,7 @@ const getEmojis = function(){
     $('.emojis').append(btnEmoji);
 };
 
+
 // const getEmojis = function(){
 //     const btn = document.getElementById('btnEmoji');
 //     const input = document.getElementById('sendMessage');
