@@ -17,13 +17,13 @@ Requirements if you want to use this project for yourself
  Installation if you want to use this project for yourself
  ------------
  
- **- Create Firebase project**
+ - Create Firebase project
  ```sh
  https://firebase.google.com/docs/web/setup
  ```
- **- Create Realtime Database**
+ - Create Realtime Database
  
- **- Run project**
+ - Run project
 
 
 Tecnologies used in this project
