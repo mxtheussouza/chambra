@@ -1,6 +1,6 @@
-XATI :coffee:
+CHAMBRA :coffee:
 ------------
-Chat in real time made with just HTML/CSS/JS/Firebase. :coffee:
+cHAMBRA is a chat in real time made with just HTML/CSS/JS/Firebase. :coffee:
 
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
