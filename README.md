@@ -18,12 +18,10 @@ Requirements if you want to use this project for yourself
  ------------
  
  **- Create Firebase project**
- 
- **- Create App WEB**
- 
- **- Copy your CDN e paste in project Chambra**
- 
- **- Create Realtime Database in Test Mode**
+ ```sh
+ https://firebase.google.com/docs/web/setup
+ ```
+ **- Create Realtime Database**
  
  **- Run project**
 
