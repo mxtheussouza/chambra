@@ -8,8 +8,6 @@ CHAMBRA is a chat in real time made with just HTML/CSS/JS/Firebase. :coffee:
 
 <hr>
 
-**- Clone this repository and run index.html**
-
 Requirements if you want to use this project for yourself
 ------------
  - Firebase account
