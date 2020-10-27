@@ -42,6 +42,10 @@ const sendMessages = function(){
         let color = sessionStorage.getItem('nameColor');
         let message = $('#sendMessage').val();
 
+        if (!$('#sendMessage').val()) {
+            return false;
+        }   
+
         // const isHtml = (str) => !(str || '')
         //     .replace(/<([^>]+?)([^>]*?)>(.*?)<\/\1>/ig, '')
         //     .replace(/(<([^>]+)>)/ig, '')
