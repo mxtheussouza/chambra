@@ -1,0 +1,27 @@
+	if(data.val().nome == nameUserCurrent){
+            var mensagemRight = "";
+            mensagemRight += "<div class='mensagem-right' style='word-wrap: break-word;'>";
+            mensagemRight += "<ul>";
+            mensagemRight += "<li>";
+            mensagemRight += "<span class='mensagem'>" +data.val().mensagem+ "</span>";
+            mensagemRight += " < "
+            mensagemRight += "<span style='color: #2860b3; background: rgba(0,0,0,0.2); padding: .2rem .4rem; border-radius: 10px;'>" +data.val().nome+ "</span>";
+            mensagemRight += "</li>";
+            mensagemRight += "</ul>";
+            mensagemRight += "</div>";
+
+            $('.content-chat').append(mensagemRight);
+        } else {
+            var mensagemLeft = "";
+            mensagemLeft += "<div class='mensagem-left' style='word-wrap: break-word;'>";
+            mensagemLeft += "<ul>";
+            mensagemLeft += "<li>";
+            mensagemLeft += "<span style='color: #dc3545; background: rgba(0,0,0,0.2); padding: .4rem; border-radius: 10px;'>" +data.val().nome+ "</span>";
+            mensagemLeft += " > "
+            mensagemLeft += "<span class='mensagem'>" +data.val().mensagem+ "</span>";
+            mensagemLeft += "</li>";
+            mensagemLeft += "</ul>";
+            mensagemLeft += "</div>";
+
+            $('.content-chat').append(mensagemLeft);
+        }
