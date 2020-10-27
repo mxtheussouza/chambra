@@ -4,7 +4,7 @@ CHAMBRA :coffee:
 CHAMBRA é um chat em tempo real feito com apenas HTML/CSS/JS/Firebase. :coffee:
 
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-2.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
 <hr>
