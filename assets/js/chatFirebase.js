@@ -4,7 +4,12 @@ $(document).ready(function() {
     getMessages();
     getColors();
     getTime();
+    getNotifications();
     getEmojis();
+
+    Notification.requestPermission().then(function (result) {
+
+    });
 });
 
 
@@ -20,7 +25,7 @@ $(document).ready(function() {
     };
 
     // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    const initFirebase = firebase.initializeApp(firebaseConfig);
 
     const database = firebase.database();
 })();
@@ -141,6 +146,14 @@ const getMessages = function(){
 
         let chatScroll = document.getElementById('contentChat');
         chatScroll.scrollTo(0,chatScroll.scrollHeight);
+
+        if (data.val().tempo == getTime()) {
+            if (window.Notification && Notification.permission == "granted") {
+                let img = ''
+                let text = data.val().mensagem
+                var notification = new Notification(data.val().nome + ' diz:', { body: text, icon: img });
+            }
+        }
     });
 };
 
@@ -200,3 +213,22 @@ const getEmojis = function(){
         picker.pickerVisible ? picker.hidePicker() : picker.showPicker(btn);
     });
 };
+
+// function validateURL(value) {
+//     return /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(value);
+
+//     if (validateURL()) {
+//         var a = document.createElement('a');
+//         var linkText = document.createTextNode(messageFormated);
+//         a.appendChild(linkText);
+//         a.title = "my title text";
+//         a.href = messageFormated;
+//         $('.content-chat').append(a);
+//     }
+
+//     or
+
+//     if (validateURL(value)){
+//         $('.content-chat').append($('<a href="'+messageFormated+'">'+messageFormated+'</a>'));
+//     }
+// };

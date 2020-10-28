@@ -11,6 +11,29 @@
   font-size: 0.8rem;
 }
 
+/*ANIMATION BLOB*/
+@-webkit-keyframes slidein { 
+    from { 
+        margin-left: 0; 
+    } 
+    to { 
+        margin-left: 100%; 
+    }  
+}
+@keyframes slidein { 
+    from { 
+        margin-left: 0; 
+    } 
+    to { 
+        margin-left: 100%; 
+    }  
+}
+
+.rocket {
+    width: 120px;
+    animation: 80s linear forwards slidein;;
+}
+
 input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;    
 }
@@ -31,7 +54,7 @@ ul, li, a {
 }
 
 .content {
-    background-image: url("../images/backgrounds/background-acesso-log.svg");
+    background-image: url("../images/backgrounds/background-chambra-blue.svg");
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -194,6 +217,10 @@ ul, li, a {
 }
 
 @media (max-width: 800px){
+.rocket {
+    display: none;
+}
+
 .content {
     display: flex;
     justify-content: center; 
