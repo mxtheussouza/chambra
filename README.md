@@ -1,7 +1,7 @@
 CHAMBRA :coffee:
 ------------
 
-CHAMBRA é um chat em tempo real feito com apenas HTML/CSS/JS/Firebase. :coffee:
+CHAMBRA it's a real-time chat with just HTML/CSS/JS/Firebase. :coffee:
 
 https://matheusdearaujo.github.io/chambra/
 
@@ -11,33 +11,17 @@ https://matheusdearaujo.github.io/chambra/
 
 <hr>
 
-Requisitos se você quiser usar este projeto para você
+Requirements if you want to use this project for you
 ------------
  - Firebase account
  
-Instalação se você quiser usar este projeto para você
- ------------
+Installation if you want to use this project for you
+------------
  
- - Crie um projeto Firebase
+ - Create a Firebase project
  ```sh
  https://firebase.google.com/docs/web/setup
  ```
- - Crie um Realtime Database
+ - Create a Realtime Database
  
- - Inicie o projeto
-
-
-Tecnologias usadas nesse projeto
-------------
-- HTML/ CSS/ JS
-- Firebase
-
-Autor
-------------
-
-👤 **Matheus Araújo**
-
-* github.com/[matheusdearaujo](https://github.com/matheusdearaujo)
-
-***
-
+ - Start the project
