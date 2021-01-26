@@ -1,0 +1,22 @@
+/*ANIMATION BLOB*/
+@-webkit-keyframes slidein { 
+    from { 
+        margin-left: 0; 
+    } 
+    to { 
+        margin-left: 100%; 
+    }  
+}
+@keyframes slidein { 
+    from { 
+        margin-left: 0; 
+    } 
+    to { 
+        margin-left: 100%; 
+    }  
+}
+
+.rocket {
+    width: 120px;
+    animation: 80s linear forwards slidein;;
+}

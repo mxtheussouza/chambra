@@ -5,3 +5,30 @@
     font-family: 'Days One', sans-serif;
     scroll-behavior: smooth;
 }
+
+ul, li, a {
+    text-decoration: none;
+    list-style: none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 0.8rem;
+  }
+::-moz-placeholder { /* Firefox 19+ */
+font-size: 0.8rem;
+}
+:-ms-input-placeholder { /* IE 10+ */
+font-size: 0.8rem;
+}
+:-moz-placeholder { /* Firefox 18- */
+font-size: 0.8rem;
+}
+ 
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;    
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
