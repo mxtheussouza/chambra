@@ -54,7 +54,7 @@ ul, li, a {
 }
 
 .content {
-    background-image: url("../images/backgrounds/background-chambra-blue.svg");
+    background-image: url("../../images/backgrounds/background-chambra-blue.svg");
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -71,7 +71,6 @@ ul, li, a {
     width: 60%;
     max-width: 1200px;
     height: 100%;
-    border-radius: 10px;
     box-shadow: 0px 4px 60px 0px rgba(13, 21, 75, 0.3);
 }
 
@@ -85,7 +84,6 @@ ul, li, a {
     border-radius: 5px;
     box-shadow: 0px 3px 20px 0px rgba(13, 21, 75, 0.3);
 }
-
 
 .login-content p {
     margin-top: 1rem;
@@ -127,8 +125,6 @@ ul, li, a {
     z-index: 20;
     width: 100%;
     height: 10vh;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     background: #194280;
     display: flex;
     align-items: center;
@@ -143,10 +139,7 @@ ul, li, a {
     position: relative;
     width: 100%;
     height: 90%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     padding: 1.6rem;
-    padding-top: 5rem;
     padding-bottom: 0;
     background-color: #f5f3f3;
     overflow: auto;    
@@ -167,8 +160,6 @@ ul, li, a {
     background: #194280;
     width: 100%;
     height: 10vh;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,58 +196,3 @@ ul, li, a {
     background-color: #2860b3;
     color: #fff;
 }
-
-
-
-
-/*RESPONSIVE*/
-@media (max-width: 970px){
-.chat-img {
-    display: none;
-}
-}
-
-@media (max-width: 800px){
-.rocket {
-    display: none;
-}
-
-.content {
-    display: flex;
-    justify-content: center; 
-    padding: 0;
-}
-
-.login-body {
-    margin: 0;
-    margin-top: 10%;
-}
-
-.content-body {
-    width: 100%;
-    border-radius: 0px; 
-}
-
-.header-chat {
-    border-radius: 0px;
-}
-
-.content-chat::-webkit-scrollbar {
-    width: 0;
-}
-
-.footer-chat {
-    border-radius: 0px;
-}
-
-.btn-sm {
-    font-size: 1rem;
-}
-}
-
-@media (max-width: 500px){
-.notebook-img {
-    width: 270px;
-}
-}
-

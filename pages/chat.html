@@ -5,7 +5,7 @@
     <title>CHAMBRA | Chat</title>
 
     <!-- ICON -->
-    <link rel="icon" href="../assets/images/icons/iconxati.png">
+    <link rel="icon" href="../assets/images/icons/chambraicon.png">
 
     <!-- META TAGS -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,18 +22,13 @@
     <link rel="stylesheet" href="../assets/css/app.css">
 
     <!-- JQUERY -->
-    <script src="../assets/js/jquery-3.5.1.min.js"></script>
+    <script src="../assets/js/dependencies/jquery.min.js"></script>
 </head>
+
 <body>
     <div class="content" style="justify-content: center;">
         <div class="content-body">
-            <div class="header-chat">
-
-            </div>
-
-            <div class="content-chat" id="contentChat">
-                <!-- <div class="row emojis"></div> -->
-            </div>
+            <div class="content-chat" id="contentChat"></div>
 
             <div class="footer-chat">
                 <form id="formMessage" class="inputs">
@@ -51,18 +46,16 @@
         </div> <!-- /content-body -->
     </div> <!-- content -->
 
-
-</body>
-    <!--SCRIPTS-->
-    <script src="../assets/js/all.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-
+    <!--CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/emoji-button@latest/dist/index.min.js"></script>  
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
 
+    <!--SCRIPTS-->
+    <script src="../assets/js/dependencies/all.min.js"></script>
+    <script src="../assets/js/dependencies/bootstrap.min.js"></script>
     <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/chatFirebase.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/emoji-button@latest/dist/index.min.js"></script>  
+    <script src="../assets/js/firebase.js"></script>
+    <script src="../assets/js/chat.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
-@import './reset.css';
-@import './all.min.css';
-@import './bootstrap.min.css';
-@import './begin.css';
+@import './app/reset.css';
+@import './dependencies/all.min.css';
+@import './dependencies/bootstrap.min.css';
+@import './app/begin.css';
+@import './app/responsive.css';
