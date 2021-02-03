@@ -1,4 +1,3 @@
-/*RESPONSIVE*/
 @media (max-width: 970px){
     .chat-img {
         display: none;
@@ -40,5 +39,3 @@
         width: 270px;
     }
 }
-    
-    

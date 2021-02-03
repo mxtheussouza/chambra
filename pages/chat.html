@@ -11,9 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="Matheus Araujo">
+    <meta name="description" content="CHAMBRA it's a real-time chat.">
+    <meta name="keywords" content="chambra, chat, realtime, firebase, javascript">
+    <meta name="author" content="Matheus Araújo">
 
     <!-- FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
@@ -21,8 +21,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/app.css">
 
-    <!-- JQUERY -->
-    <script src="../assets/js/dependencies/jquery.min.js"></script>
+    <!-- LIBS -->
+    <script src="../assets/js/libs/jquery.min.js"></script>
 </head>
 
 <body>
@@ -36,26 +36,29 @@
                         <span style="display: flex; align-items: center; font-size: 1.8rem; padding: .4rem; height: 5vh; color:#fff; cursor: pointer;"> <i class="fas fa-smile"></i> </span>
                     </div>
 
-                    <input id="sendMessage" type="text" class="form-control" autocomplete="off" placeholder="Digite sua mensagem aqui." style="width: 80%; height: 5vh;" autofocus>
+                    <input id="sendMessage" type="text" class="form-control" autocomplete="off" placeholder="Digite sua mensagem aqui." autofocus style="width: 80%; height: 5vh;"/>
 
                     <div class="input-group-append">
                         <button class="btn btn" type="submit" style="display: flex; align-items: center; height: 5vh; color:#fff; font-size: 1.8rem;"> <i class="fas fa-paper-plane"></i> </button>
                     </div>
                 </form>
-            </div> <!-- /footer-chat -->
-        </div> <!-- /content-body -->
-    </div> <!-- content -->
+            </div>
+        </div>
+    </div>
 
-    <!--CDN-->
+    <!-- CDN -->
     <script src="https://cdn.jsdelivr.net/npm/emoji-button@latest/dist/index.min.js"></script>  
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
 
-    <!--SCRIPTS-->
-    <script src="../assets/js/dependencies/all.min.js"></script>
-    <script src="../assets/js/dependencies/bootstrap.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/firebase.js"></script>
-    <script src="../assets/js/chat.js"></script>
+    <!-- LIBS -->
+    <script src="../assets/js/libs/all.min.js"></script>
+    <script src="../assets/js/libs/toastr.min.js"></script>
+    <script src="../assets/js/libs/bootstrap.min.js"></script>
+
+    <!-- SCRIPTS -->
+    <script src="../assets/js/Main.js"></script>
+    <script src="../assets/js/Firebase.js"></script>
+    <script src="../assets/js/Chat.js"></script>
 </body>
 </html>

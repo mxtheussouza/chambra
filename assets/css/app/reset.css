@@ -11,18 +11,17 @@ ul, li, a {
     list-style: none;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    font-size: 0.8rem;
-  }
-::-moz-placeholder { /* Firefox 19+ */
-font-size: 0.8rem;
-}
-:-ms-input-placeholder { /* IE 10+ */
-font-size: 0.8rem;
-}
-:-moz-placeholder { /* Firefox 18- */
-font-size: 0.8rem;
-}
+/* Chrome/Opera/Safari */
+::-webkit-input-placeholder { font-size: 0.8rem; }
+
+/* Firefox 19+ */
+::-moz-placeholder { font-size: 0.8rem; }
+
+/* IE 10+ */
+:-ms-input-placeholder { font-size: 0.8rem; }
+
+/* Firefox 18- */
+:-moz-placeholder { font-size: 0.8rem; }
  
 input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;    

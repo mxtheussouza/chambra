@@ -1,6 +1,7 @@
+@import './libs/all.min.css';
+@import './libs/bootstrap.min.css';
+@import './libs/toastr.min.css';
 @import './app/reset.css';
-@import './dependencies/all.min.css';
-@import './dependencies/bootstrap.min.css';
 @import './app/begin.css';
 @import './app/responsive.css';
 @import './app/animations.css';

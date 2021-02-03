@@ -11,9 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="Matheus Araujo">
+    <meta name="description" content="CHAMBRA it's a real-time chat.">
+    <meta name="keywords" content="chambra, chat, realtime, firebase, javascript">
+    <meta name="author" content="Matheus Araújo">
 
     <!-- FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
@@ -21,19 +21,19 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/app.css">
 
-    <!-- JQUERY -->
-    <script src="./assets/js/dependencies/jquery.min.js"></script>
+    <!-- LIBS -->
+    <script src="./assets/js/libs/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="content">
-        <img src="assets/images/rocket.png" alt="Rocket" class="rocket" style="position: absolute; top: 0; left: 0;">
+        <img src="assets/images/rocket.png" alt="Rocket" class="rocket" style="position: absolute; top: 0; left: 0;"/>
         <div class="login-body">
             <div class="login-content">
-                <form method="POST">
+                <form>
                     <div class="form-group">
-                        <label for="InputNome" style="color: rgba(0,0,0,0.7);">Nome de Usuário</label>
-                        <input id="nickname" type="text" class="form-control" name="nickname" placeholder="Coloque o seu nome de usuário" autocomplete="off" autofocus>
+                        <label style="color: rgba(0,0,0,0.7);">Nome de Usuário</label>
+                        <input id="nickname" type="text" class="form-control" placeholder="Coloque o seu nome de usuário." autocomplete="off" autofocus/>
                     </div>
 
                     <button id="btnEnter" class="btn btn-danger" type="submit" style="width: 100%; color: #FFF; font-size: 1rem;">
@@ -44,19 +44,22 @@
         </div>
 
         <div class="images-bg">
-            <img class="notebook-img" src="./assets/images/notebook.svg">
-            <img class="chat-img" src="./assets/images/chat.svg">
+            <img class="notebook-img" alt="Notebook" src="./assets/images/notebook.svg"/>
+            <img class="chat-img" alt="Chat" src="./assets/images/chat.svg"/>
         </div>
-    </div> <!-- CONTENT-->
-</body>
-    <!--SCRIPTS-->
-    <script src="./assets/js/dependencies/all.min.js"></script>
-    <script src="./assets/js/dependencies/bootstrap.min.js"></script>
+    </div>
 
+    <!-- CDN -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
 
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/firebase.js"></script>
+    <!-- LIBS -->
+    <script src="./assets/js/libs/all.min.js"></script>
+    <script src="./assets/js/libs/toastr.min.js"></script>
+    <script src="./assets/js/libs/bootstrap.min.js"></script>
+
+    <!-- SCRIPTS -->
+    <script src="./assets/js/Main.js"></script>
+    <script src="./assets/js/Firebase.js"></script>
 </body>
 </html>

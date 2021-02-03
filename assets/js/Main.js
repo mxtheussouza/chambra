@@ -3,11 +3,12 @@ $(document).ready(() => {
 	getColors();
 });
 
-function buttons(){
+function buttons() {
 	$('#btnEnter').click(e => {
 		e.preventDefault();
 	
 		if (!$('#nickname').val()) { 
+			toastr.error('Preencha um nome de usuário!');
 			return false; 
 		} else {
 			sessionStorage.setItem('inputValue', $('#nickname').val());
@@ -18,10 +19,6 @@ function buttons(){
 	});
 }
 
-function getColors(){
-    const color = (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6);
-    const nameColor = '#' + color;
-
-    return nameColor;
-};
-
+function getColors() {
+    return '#' + (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6);
+}

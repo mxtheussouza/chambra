@@ -3,45 +3,43 @@ $(document).ready(() => {
     getMessages();
     getTime();
 
-    Notification.requestPermission().then(function(result) {
+    Notification.requestPermission().then(result => {
 
     });
 });
-
 
 const sendMessages = () => {
     $('#formMessage').submit(e => {
         e.preventDefault();
 
-        let name = sessionStorage.getItem('inputValue');
-        let color = sessionStorage.getItem('nameColor');
-        let message = $('#sendMessage').val();
+        if (!$('#sendMessage').val()) { return false; }   
 
-        if (!message) {
-            return false;
-        }   
-
-        let messageFormated = message.replace(/&/g, "&amp;") .replace(/</g, "&lt;") .replace(/>/g, "&gt;") .replace(/"/g, "&quot;") .replace(/'/g, "&#039;");
-
-        $('#sendMessage').val('');
+        const message = $('#sendMessage').val()
+                    .replace(/&/g, '&amp;') 
+                    .replace(/</g, '&lt;') 
+                    .replace(/>/g, '&gt;') 
+                    .replace(/"/g, '&quot;') 
+                    .replace(/'/g, '&#039;');
 
         firebase.database().ref('messages').push().set({
-            name: name,
-            color: color,
-            message: messageFormated,
-            time: getTime()
+            name: sessionStorage.getItem('inputValue'),
+            color: sessionStorage.getItem('nameColor'),
+            message: message,
+            time: getTime(),
         });
+        
+        $('#sendMessage').val('');
     });
-};
+}
 
 const getMessages = () => {
-    const messagesRef = firebase.database().ref('messages');
+    const ref = firebase.database().ref('messages');
 
-    messagesRef.on('child_added', data => {  
-        let nameUserCurrent = sessionStorage.getItem('inputValue');
-    
-        if (data.val().name == nameUserCurrent) {
-            let messageRight = `<div style='display: flex; justify-content: flex-end; margin-bottom: 1rem;'>
+    ref.on('child_added', data => {  
+        const content = document.getElementsByClassName('content-chat')[0];
+
+        if (data.val().name == sessionStorage.getItem('inputValue')) {
+            const messageRight = `<div style='display: flex; justify-content: flex-end; margin-bottom: 1rem;'>
                                     <div style='max-width: 95%; position: relative;'>
                                         <div style='background: #fff; position: relative; border-radius: .8rem; box-shadow: 0px 2px 3px 0px rgba(13, 21, 75, 0.3);'>
                                             <div style='padding: 6px 7px 4px 9px;'>
@@ -66,7 +64,7 @@ const getMessages = () => {
             $('.content-chat').append(messageRight);
 
         } else {
-            let messageLeft = `<div style='display: flex; justify-content: flex-start; margin-bottom: 1rem;'>
+            const messageLeft = `<div style='display: flex; justify-content: flex-start; margin-bottom: 1rem;'>
                                     <div style='max-width: 95%; position: relative;'>
                                         <div style='background: #fff; position: relative; border-radius: .8rem; box-shadow: 0px 2px 3px 0px rgba(13, 21, 75, 0.3);'>
                                             <div style='padding: 6px 7px 4px 9px;'>
@@ -95,33 +93,31 @@ const getMessages = () => {
             $('.content-chat').append(messageLeft);
 
             if (data.val().time == getTime()) {
-                if (window.Notification && Notification.permission == "granted") {
-                    let img = ''
-                    let text = data.val().message
-                    var notification = new Notification(data.val().name + ' diz:', { body: text, icon: img });
+                if (window.Notification && Notification.permission == 'granted') {
+                    const notification = new Notification(data.val().name, {
+                        icon: '../assets/images/icons/chambraicon.png',
+                        body: `${data.val().message} - ${getTime()}`, 
+                    });
                 }
             }
         }
 
-        let chatScroll = document.getElementsByClassName('content-chat')[0];
-        chatScroll.scrollTo(0, chatScroll.scrollHeight);
+        content.scrollTo(0, content.scrollHeight);
     });
-};
+}
 
 const getTime = () => {
-    let data = new Date();
-    let hora = data.getHours(); 
-    let min  = data.getMinutes();
+    const date = new Date();
+    let hour = date.getHours();
+    let min = date.getMinutes();
 
-    if (hora < 10) {
-        hora = '0' + hora;
+    if (hour < 10) {
+        hour = `0${hour}`;
     }
 
     if (min < 10) {
-        min = '0' + min;
+        min = `0${min}`;
     }
 
-    let time = `${hora}:${min}`;
-
-    return time;
-};
+    return `${hour}:${min}`;
+}
