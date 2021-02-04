@@ -2,6 +2,8 @@ $(document).ready(() => {
     sendMessages();
     getMessages();
     getTime();
+    commands();
+    getEmojis();
 
     Notification.requestPermission().then(result => {
 
@@ -11,6 +13,7 @@ $(document).ready(() => {
 const sendMessages = () => {
     $('#formMessage').submit(e => {
         e.preventDefault();
+        commands();
 
         if (!$('#sendMessage').val()) { return false; }   
 
@@ -62,7 +65,6 @@ const getMessages = () => {
                                 </div>`;
 
             $('.content-chat').append(messageRight);
-
         } else {
             const messageLeft = `<div style='display: flex; justify-content: flex-start; margin-bottom: 1rem;'>
                                     <div style='max-width: 95%; position: relative;'>
@@ -120,4 +122,22 @@ const getTime = () => {
     }
 
     return `${hour}:${min}`;
+}
+
+const commands = () => {
+    switch ($('#sendMessage').val()) {
+        case '/name':
+            Swal.fire({
+                title: sessionStorage.getItem('inputValue'),
+            });
+        break;
+
+        default: break;
+    }
+}
+
+const getEmojis = () => {
+    $('#emoji').click(() => {
+        toastr.error('Função em desenvolvimento!');
+    });
 }
