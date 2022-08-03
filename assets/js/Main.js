@@ -1,23 +1,25 @@
 $(document).ready(() => {
-	buttons();
-	getColors();
+    sendUsers();
+    getColors();
 });
 
-function buttons() {
-	$('#btnEnter').click(e => {
-		e.preventDefault();
-	
-		if (!$('#nickname').val()) { 
-			toastr.error('Preencha um nome de usuário!');
-			return false; 
-		} else {
-			sessionStorage.setItem('inputValue', $('#nickname').val());
-			sessionStorage.setItem('nameColor', getColors());
-	
-			window.location.href = './pages/chat.html';
-		}
-	});
-}
+const sendUsers = () => {
+    $('#formIndex').submit((e) => {
+        e.preventDefault();
+
+        const nickname = $('#nickname').val();
+
+        if (!nickname) {
+            toastr.error('Preencha um nome de usuário!');
+            return false;
+        }
+
+        sessionStorage.setItem('userName', nickname);
+        sessionStorage.setItem('nameColor', getColors());
+
+        window.location.href = './pages/chat.html';
+    });
+};
 
 function getColors() {
     return '#' + (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6);

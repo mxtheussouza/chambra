@@ -3,39 +3,61 @@
         display: none;
     }
 }
-    
+
 @media (max-width: 800px){
     .rocket {
         display: none;
     }
-    
+
     .content {
         display: flex;
-        justify-content: center; 
+        justify-content: center;
         padding: 0;
     }
-    
+
     .login-body {
         margin: 0;
         margin-top: 10%;
         border-radius: 0;
     }
-    
+
     .content-body {
         width: 100%;
     }
-    
+
     .content-chat::-webkit-scrollbar {
         width: 0;
     }
-    
+
     .btn-sm {
         font-size: 1rem;
     }
 }
-    
+
 @media (max-width: 500px){
     .notebook-img {
         width: 270px;
+    }
+
+    .header-chat {
+        display: none;
+    }
+}
+
+@media (max-width: 400px){
+    .content {
+        background-image: none;
+    }
+
+    .notebook-img {
+        display: none;
+    }
+
+    .login-body {
+        width: 400px;
+        max-width: 100%;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: none;
     }
 }
