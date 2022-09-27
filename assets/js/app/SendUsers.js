@@ -1,9 +1,6 @@
-$(document).ready(() => {
-	sendUsers();
-	getColors();
-});
+import { GetColors } from "./Chat/shared/GetColors.js";
 
-const sendUsers = () => {
+export const SendUsers = () => {
 	$("#formIndex").submit(e => {
 		e.preventDefault();
 
@@ -15,11 +12,8 @@ const sendUsers = () => {
 		}
 
 		sessionStorage.setItem("userName", nickname);
-		sessionStorage.setItem("nameColor", getColors());
+		sessionStorage.setItem("nameColor", GetColors);
 
 		window.location.href = "./pages/chat.html";
 	});
 };
-
-const getColors = () =>
-	"#" + (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6);

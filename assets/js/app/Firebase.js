@@ -1,6 +1,4 @@
-$(document).ready(() => initFirebase());
-
-const initFirebase = () => {
+export const InitFirebase = () => {
 	const firebaseConfig = {
 		apiKey: "AIzaSyA5Z029X1_OS3-xOJ0qqoL3rLU109H1IS0",
 		authDomain: "chambra-chat.firebaseapp.com",
@@ -11,6 +9,6 @@ const initFirebase = () => {
 		appId: "1:894331302194:web:24069cdc304fccab49a72b",
 	};
 
-	const initFirebase = firebase.initializeApp(firebaseConfig);
-	const database = firebase.database();
+	firebase.initializeApp(firebaseConfig);
+	firebase.database();
 };

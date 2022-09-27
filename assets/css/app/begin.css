@@ -123,3 +123,11 @@ body {
     border-radius: 10px;
     border: none;
 }
+
+.wrapper {
+    position: absolute;
+    bottom: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
